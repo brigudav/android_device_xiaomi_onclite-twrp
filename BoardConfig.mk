@@ -16,6 +16,9 @@ TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := sdm632
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
 
+QCOM_BOARD_PLATFORMS += sdm632
+TARGET_USES_64_BIT_BINDER := true
+
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 lpm_levels.sleep_disabled=1
