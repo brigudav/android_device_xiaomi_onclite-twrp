@@ -3,6 +3,7 @@ TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
+
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
@@ -15,7 +16,14 @@ TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := sdm632
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
 
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_serial_dm,0x78af000 firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7 androidboot.selinux=permissive buildvariant=eng
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0
+BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom msm_rtb.filter=0x237
+BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci
+BOARD_KERNEL_CMDLINE += earlycon=msm_serial_dm,0x78af000
+BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image
+BOARD_KERNEL_CMDLINE += androidboot.usbconfigfs=true loop.max_part=7
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -54,10 +62,12 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3758096384
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 24154979840
 BOARD_FLASH_BLOCK_SIZE := 262144
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_COPY_OUT_VENDOR := vendor
 
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
+TARGET_OTA_ASSERT_DEVICE := onc,onclite
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
